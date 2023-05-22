@@ -1,0 +1,40 @@
+ body {
+    background: linear-gradient(pink, lime);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: arial;
+}
+
+h1 {
+   position: relative;
+   transition: 0.3s; 
+   transition-delay: 0,1s;
+}
+
+h1:hover {
+   color: white;
+   cursor: pointer;
+}
+
+   
+
+h1::before {
+   content: "";
+   position:absolute;
+   width: 50%;
+   height: 300%;
+   background: red;
+   left: -50%;
+   top: 150%;
+   transition: 0.3s;
+   z-index: -1;
+   opacity: 0;
+}
+
+h1:hover::before {
+   transform: translate(50px, -100px) rotate(90deg);
+   opacity: 1;  
+}
